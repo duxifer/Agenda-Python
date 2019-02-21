@@ -29,7 +29,7 @@ https://entrenamiento-python-basico.readthedocs.io/es/latest/leccion1/ventajas_d
   * Sublime Text
   * Atom
   * Visual Studio Code
-  *PyCharm
+  * PyCharm
   
 Flask es util a la hora de crear aplicaciones sencillas y para aplicaciones con mayor complejidad es mejor es mejor optar por frameworks mas complejos, debido a que la misma simplicidad de Flask relentisa el desarrollo de aplicaciones complejas al tener que estar definiendo de manera manual todo
 
