@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Agenda</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1>Agenda</h1>
+    <form action="{{ url_for('agenda.create') }}" method="post">
+        <label for="nombre">Nombre</label>
+        <input name="nombre" id="nombre" value="{{ request.form['nombre'] }}" required>
+        <label for="apellido">Apellido</label>
+        <input name="apellido" id="apellido" value="{{ request.form['apellido'] }}">
+        <label for="direccion">Email</label>
+        <input name="direccion" id="direccion" type="email" value="{{ request.form['direccion'] }}">
+        <label for="numero">numero</label>
+        <input name="numero" id="numero" value="{{ request.form['numero'] }}" required>
+        <label for="tipo">tipo</label>
+        <select name="tipo" id="tipo">
+            <option value="movil">movil</option>
+            <option value="casa">casa</option>
+            <option value="oficina">oficina</option>
+            <option value="otro">otro</option>
+        </select>
+        <input type="submit" value="Save">
+    </form>
+    <br />
+    {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+    <table style="width:100%">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Numero</th>
+            <th>Tipo</th>
+            <th>Acciones</th>
+        </tr>
+        {% for num in numeros %}
+        <tr>
+            <td>{{ num.nombre }}</td>
+            <td>{{ num.apellido }}</td>
+            <td>{{ num.email }}</td>
+            <td>{{ num.numero }}</td>
+            <td>{{ num.tipo }}</td>
+            <td><a class="action" href="{{ url_for('agenda.update', id=num['id']) }}">Actualizar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Agenda - Actualizar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1>Agenda</h1>
+    <form action="{{ url_for('agenda.update', id=registro.id) }}" method="post">
+        <label for="nombre">Nombre</label>
+        <input name="nombre" id="nombre" value="{{ registro.nombre }}" required>
+        <label for="apellido">Apellido</label>
+        <input name="apellido" id="apellido" value="{{ registro.apellido }}">
+        <label for="direccion">Email</label>
+        <input name="direccion" id="direccion" type="email" value="{{ registro.email }}">
+        <label for="numero">numero</label>
+        <input name="numero" id="numero" value="{{ registro.numero }}" required>
+        <label for="tipo">tipo</label>
+        <select name="tipo" id="tipo">
+            <option value="movil">movil</option>
+            <option value="casa">casa</option>
+            <option value="oficina">oficina</option>
+            <option value="otro">otro</option>
+        </select>
+        <input type="submit" value="Save">
+    </form>
+    <br />
+    <form action="{{ url_for('agenda.delete', id=registro.id) }}" method="post">
+        <input class="danger" type="submit" value="Delete" onclick="return confirm('Estas seguro?');">
+    </form>
+    {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+    {% endfor %}
+</body>
+
+</html>
