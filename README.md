@@ -24,7 +24,6 @@ https://entrenamiento-python-basico.readthedocs.io/es/latest/leccion1/ventajas_d
 * La herramienta ORM mas recomendada por los creadores de Flask es sqlalchemy
 * Para el manejo de librerias se usa PIP
 * Para la base de datos en aplicaciones pequeñas es mas facil el uso de sqlite y aplicaciones de mayor tamaño pueden optar pos vbases de datos mas complejas. 
-* Para la publicacion en linea de la aplicacion web la plataorma mas comun es Azure y para implementar la aplicacion en una red local el IIS
 * El IDE mas popular para el desarollo en python son :
   * Sublime Text
   * Atom
